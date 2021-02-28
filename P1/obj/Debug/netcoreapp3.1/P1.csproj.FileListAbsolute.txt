@@ -17,3 +17,5 @@ E:\My Programs\ITIC#\Day2_WPF_ITI\P1\obj\Debug\netcoreapp3.1\P1.csproj.CoreCompi
 E:\My Programs\ITIC#\Day2_WPF_ITI\P1\obj\Debug\netcoreapp3.1\P1.dll
 E:\My Programs\ITIC#\Day2_WPF_ITI\P1\obj\Debug\netcoreapp3.1\P1.pdb
 E:\My Programs\ITIC#\Day2_WPF_ITI\P1\obj\Debug\netcoreapp3.1\P1.genruntimeconfig.cache
+E:\My Programs\ITIC#\Day2_WPF_ITI\P1\obj\Debug\netcoreapp3.1\Calculator.g.cs
+E:\My Programs\ITIC#\Day2_WPF_ITI\P1\obj\Debug\netcoreapp3.1\Calculator.baml
