@@ -42,47 +42,60 @@ namespace P1
 
         private void Button_Click_op(object sender, RoutedEventArgs e)
         {
-            var symbol = prevSymb;
-            prevSymb = (e.Source as Button).Content.ToString();
 
-            switch (symbol)
+           
+            if ((e.Source as Button).Content.ToString() == ".")
             {
-                case ".":
-                    Result.Text += symbol;
-                    Point.IsEnabled = false;
-                    break;
-                case "+":
-                    Prev = float.Parse(Result.Text.ToString()) + Prev;
-                    Result.Text = Prev.ToString();
-                    Point.IsEnabled = true;
-                    SymbPressed = true;
-                    break;
-                case "/":
-                    Prev = float.Parse(Result.Text.ToString()) / Prev;
-                    Result.Text = Prev.ToString();
-                    Point.IsEnabled = true;
-                    SymbPressed = true;
-                    break;
-                case "x":
-                    Prev = float.Parse(Result.Text.ToString()) * Prev;
-                    Result.Text = Prev.ToString();
-                    Point.IsEnabled = true;
-                    SymbPressed = true;
-                    break;
-                case "-":
-                    Prev = float.Parse(Result.Text.ToString()) - Prev;
-                    Result.Text = Prev.ToString();
-                    Point.IsEnabled = true;
-                    SymbPressed = true;
-                    break;
-                case "=":
-                    Prev = float.Parse(Result.Text.ToString());
-                    Result.Text = Prev.ToString();
-                    Point.IsEnabled = true;
-                    SymbPressed = true;
-                    break;
+                Result.Text += (e.Source as Button).Content.ToString();
+                Point.IsEnabled = false;
             }
+            else
+            {
+                var symbol = prevSymb;
+                prevSymb = (e.Source as Button).Content.ToString();
 
+
+
+                switch (symbol)
+                {
+                    case "+":
+                        Prev = float.Parse(Result.Text.ToString()) + Prev;
+                        Result.Text = Prev.ToString();
+                        Point.IsEnabled = true;
+                        SymbPressed = true;
+                        break;
+                    case "/":
+                        if (float.Parse(Result.Text.ToString()) == 0)
+                            MessageBox.Show("Invalid", "Error");
+                        else
+                        {
+                            Prev = Prev / float.Parse(Result.Text.ToString());
+                            Result.Text = Prev.ToString();
+                            Point.IsEnabled = true;
+                            SymbPressed = true;
+                        }
+                        break;
+                    case "x":
+                        Prev = float.Parse(Result.Text.ToString()) * Prev;
+                        Result.Text = Prev.ToString();
+                        Point.IsEnabled = true;
+                        SymbPressed = true;
+                        break;
+                    case "-":
+                        Prev = float.Parse(Result.Text.ToString()) - Prev;
+                        Result.Text = Prev.ToString();
+                        Point.IsEnabled = true;
+                        SymbPressed = true;
+                        break;
+                    case "=":
+                        Prev = float.Parse(Result.Text.ToString());
+                        Result.Text = Prev.ToString();
+                        Point.IsEnabled = true;
+                        SymbPressed = true;
+                        break;
+                }
+
+            }
         }
     }
 }
